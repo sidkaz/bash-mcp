@@ -35,7 +35,7 @@ func handleToolsList(id any) Response {
 		Result: map[string]any{
 			"tools": []any{
 				map[string]any{
-					"name":        "bash.run",
+					"name":        "bash_run",
 					"description": "Execute a bash command",
 					"inputSchema": map[string]any{
 						"type": "object",
@@ -87,7 +87,7 @@ func handleToolsCall(id any, params json.RawMessage) Response {
 
 	_ = json.Unmarshal(params, &p)
 
-	if p.Name != "bash.run" {
+	if p.Name != "bash_run" {
 		return Response{Jsonrpc: "2.0", ID: id, Error: "unknown tool"}
 	}
 
